@@ -1,3 +1,6 @@
+//Connecting the database
+const { Sequelize } = require('sequelize');
+
 // DEPENDENCIES
 const express = require('express')
 const app = express()
@@ -7,12 +10,8 @@ require('dotenv').config()
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
-// ROOT
-app.get('/', (req, res) => {
-    res.status(200).json({
-        message: 'Welcome to the Tour API'
-    })
-})
+// passing the connection
+
 
 // LISTEN
 app.listen(process.env.PORT, () => {
